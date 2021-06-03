@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\turnos\\turnos.csproj": {}
+    "C:\\turnos\\turnos.csproj": {}
   },
   "projects": {
-    "c:\\turnos\\turnos.csproj": {
+    "C:\\turnos\\turnos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\turnos\\turnos.csproj",
+        "projectUniqueName": "C:\\turnos\\turnos.csproj",
         "projectName": "turnos",
-        "projectPath": "c:\\turnos\\turnos.csproj",
+        "projectPath": "C:\\turnos\\turnos.csproj",
         "packagesPath": "C:\\Users\\alexb\\.nuget\\packages\\",
-        "outputPath": "c:\\turnos\\obj\\",
+        "outputPath": "C:\\turnos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexb\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,14 @@
         "netcoreapp3.1": {
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.1, )"
             }
