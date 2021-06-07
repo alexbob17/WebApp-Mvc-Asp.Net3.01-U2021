@@ -61,7 +61,19 @@ namespace turnos.Controllers
             }
             var especialidad = _context.Especialidad.FirstOrDefault(e => e.IdEspecialidad == id);
             
+            if(especialidad == null){
+                return NotFound();
+            }
             return View(especialidad);
+        }
+        
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var especialidad = _context.Especialidad.Find(id);
+            _context.Especialidad.Remove(especialidad);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
         }
     }
 }
