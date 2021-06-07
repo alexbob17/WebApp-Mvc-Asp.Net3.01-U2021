@@ -1,0 +1,21 @@
+@model turnos.Models.Especialidad
+
+
+<h4>Especialidad</h4>
+<div>
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly"> </div>
+            <div>
+                <label asp-for="Descripcion"></label>
+                <input asp-for="Descripcion">
+                <span asp-validation-for="Descripcion"></span>
+            </div>
+        <div>
+            <input type="submit" value="Guardar">
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Volver</a>
+</div>

@@ -67,3 +67,4 @@ C:\turnos\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Securit
 C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\index.cshtml.g.cs
 C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\Edit.cshtml.g.cs
 C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\Delete.cshtml.g.cs
+C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\Create.cshtml.g.cs
