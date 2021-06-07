@@ -16,6 +16,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Descripcion)
                 </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdEspecialidad">Editar</a>
+                </td>
             </tr>
         }
     </tbody>
