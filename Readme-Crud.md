@@ -1,4 +1,4 @@
-## Proyecto de curso Turnos de Pacientes
+## Proyecto Turnos de Pacientes
 
 Este proyecto de curso consta del desarrollo de una Aplicación web de turnos de pacientes desarrollado con ASP.NET Core 3.1 C#, con el modelo MVC y con SQL Server.
 
