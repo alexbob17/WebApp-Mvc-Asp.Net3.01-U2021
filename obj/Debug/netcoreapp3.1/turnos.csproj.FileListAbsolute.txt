@@ -68,3 +68,8 @@ C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\index.cshtml.g.cs
 C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\Edit.cshtml.g.cs
 C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\Delete.cshtml.g.cs
 C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Especialidad\Create.cshtml.g.cs
+C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\index.cshtml.g.cs
+C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Create.cshtml.g.cs
+C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Details.cshtml.g.cs
+C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Edit.cshtml.g.cs
+C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Delete.cshtml.g.cs
