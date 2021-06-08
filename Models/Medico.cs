@@ -6,7 +6,7 @@ namespace turnos.Models
     public class Medico
     {
         [Key]
-        public int idMedico{get; set;}
+        public int IdMedico{get; set;}
 
         public string Nombre {get; set;}
 
@@ -16,7 +16,5 @@ namespace turnos.Models
         public string Email{get; set;}    
         public DateTime HorarioAtencionDesde {get; set;}
         public DateTime HorarioAtencionHasta {get; set;}
-
-
     }
 }
