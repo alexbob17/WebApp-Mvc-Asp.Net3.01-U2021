@@ -1,8 +1,13 @@
-## Welcome To my project Crud-Pacientes 2021
+## Proyecto de curso Turnos de Pacientes
 
-- Net frameworks 3.0.1
-- Asp Net
-- C#
+Este proyecto de curso consta del desarrollo de una Aplicación web de turnos de pacientes desarrollado con ASP.NET Core 3.1 C#, con el modelo MVC y con SQL Server.
 
-Instruccion o Consejos para realizar la App en asp net.
-[Install-NetFramework-Mvc]
+## Que necesitamos?
+- MVC el patrón Modelo/Vista/Controlador en tus proyectos.
+- Data Annotations para definir validaciones de formulario y anotaciones en propiedades.
+- MaterializeCSS, vamos a incorporar elementos a nuestro sitio web.
+- Programar EndPoints en el backend con C#.
+- Seguridad con AntiForgery Token y su implementacion.
+- Manipular información de nuestras tablas en SQL Server mediante LinQ.
+- Utilizar la herramienta Migrations Tool, para desarrollar en modo Code First.
+- Implementar un Login en nuestro sistema con HttpContext y SHA2_256.
