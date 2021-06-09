@@ -1,0 +1,53 @@
+@model turnos.Models.Medico
+
+<h1>Medico</h1>
+
+<div>
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly"></div>
+            <input type="hidden" asp-for="IdMedico">
+            <div>
+                <label asp-for="Nombre"></label>
+                <input asp-for="Nombre">
+                <span asp-validation-for ="Nombre"></span>
+            </div>
+            <div>
+                <label asp-for="Apellido"></label>
+                <input asp-for="Apellido">
+                <span asp-validation-for ="Apellido"></span>
+            </div>
+            <div>
+                <label asp-for="Direccion"></label>
+                <input asp-for="Direccion">
+                <span asp-validation-for ="Direccion"></span>
+            </div>
+            <div>
+                <label asp-for="Telefono"></label>
+                <input asp-for="Telefono">
+                <span asp-validation-for ="Telefono"></span>
+            </div>
+            <div>
+                <label asp-for="Email"></label>
+                <input asp-for="Email">
+                <span asp-validation-for ="Email"></span>
+            </div>
+            <div>
+                <label asp-for="HorarioAtencionDesde"></label>
+                <input asp-for="HorarioAtencionDesde">
+                <span asp-validation-for ="HorarioAtencionDesde"></span>
+            </div>
+            <div>
+                <label asp-for="HorarioAtencionHasta"></label>
+                <input asp-for="HorarioAtencionHasta">
+                <span asp-validation-for ="HorarioAtencionHasta"></span>
+            </div>
+
+            <div>
+                <input type="submit" value="Guardar">
+            </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Volver</a>
+</div>
