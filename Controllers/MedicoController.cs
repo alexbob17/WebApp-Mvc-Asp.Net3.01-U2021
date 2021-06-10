@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using turnos.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
+
 namespace turnos.Controllers
 {
     public class MedicoController : Controller
@@ -56,9 +58,10 @@ namespace turnos.Controllers
                 var medicoEspecialidad = new MedicoEspecialidad();
                 medicoEspecialidad.IdMedico = medico.IdMedico;
                 medicoEspecialidad.IdEspecialidad = IdEspecialidad;
+
                 _context.Add(medicoEspecialidad);
                 await _context.SaveChangesAsync();
-                
+
                 return RedirectToAction(nameof(Index));
             }
             return View(medico);
@@ -66,16 +69,21 @@ namespace turnos.Controllers
 
         public async Task<IActionResult> Edit(int? id)
         {
-
             if (id == null)
             {
                 return NotFound();
             }
-            var medico = await _context.Medico.FindAsync(id);
+            var medico = await _context.Medico.Where(m => m.IdMedico == id)
+            .Include(me => me.MedicoEspecialidad).FirstOrDefaultAsync();
+
             if (medico == null)
             {
                 return NotFound();
             }
+
+        ViewData["ListaEspecialidades"] = new SelectList(
+            _context.Especialidad, "IdEspecialidad","Descripcion", medico.MedicoEspecialidad[0].IdEspecialidad);
+            
             return View(medico);
         }
 
@@ -83,7 +91,7 @@ namespace turnos.Controllers
         [HttpPost]
         //Valida que el formulario no se acceda atraves de una url , Sino desde el formulario
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico)
+        public async Task<IActionResult> Edit(int id, [Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico, int IdEspecialidad)
         {
             if (id != medico.IdMedico)
             {
@@ -93,6 +101,18 @@ namespace turnos.Controllers
             {
                 _context.Update(medico);
                 await _context.SaveChangesAsync();
+
+                var medicoEspecialidad = await _context.MedicoEspecialidad
+                .FirstOrDefaultAsync(me => me.IdMedico == id);
+
+                _context.Remove(medicoEspecialidad);
+                await _context.SaveChangesAsync();
+
+                medicoEspecialidad.IdEspecialidad = IdEspecialidad;
+
+                _context.Add(medicoEspecialidad);
+                await _context.SaveChangesAsync();
+
                 RedirectToAction(nameof(Index));
             }
             return View(medico);
@@ -119,6 +139,13 @@ namespace turnos.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int? id)
         {
+
+            var medicoEspecialidad = await _context.MedicoEspecialidad
+            .FirstOrDefaultAsync(me => me.IdMedico ==id);
+
+            _context.MedicoEspecialidad.Remove(medicoEspecialidad);
+            await _context.SaveChangesAsync();
+
             if (id == null)
             {
                 return NotFound();
