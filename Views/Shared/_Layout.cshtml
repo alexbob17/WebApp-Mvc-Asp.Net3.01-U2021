@@ -1,44 +1,43 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Turnos</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/styles.css">
+
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">turnos</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Especialidad" asp-action="Index">Especialidad</a>
-                        </li>
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Paciente" asp-action="Index">Paciente</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Medico" asp-action="Index">Medico</a>
-                        </li>
-                    </ul>
+    <header class="header">
+            <a class="header__logo" asp-controller="Home" asp-action="Index">Sistema Turnos</a>
+            <ion-icon name="menu-outline" class="header__toggle" id="nav-toggle"></ion-icon>
+            <nav class="nav__header" id="nav-menu">
+                <div class="nav__content bd-grid">
+                    <ion-icon name="close-outline" class="nav__close" id="nav-close"></ion-icon>
+                    <div class="nav__perfil">
+                        <div>
+                            <a class="nav__name" style="color:white;">Sistema Turnos</a>
+                        </div>
+                    </div>
+    
+                    <div class="nav__menu">
+                        <ul class="nav__list">
+                            <li class="nav__item"><a class="nav__link active" style="color:white;" asp-controller="Home" asp-action="Index">Inicio</a></li>
+                            <li class="nav__item"><a class="nav__link" style="color:white;" asp-controller="Especialidad" asp-action="Index">Especialidad</a></li>
+                            <li class="nav__item"><a class="nav__link" style="color:white;" asp-controller="Paciente" asp-action="Index">Paciente</a></li>
+                            <li class="nav__item"><a class="nav__link" style="color:white;" asp-controller="Medico" asp-action="Index">Medico</a></li>
+                            <li class="nav__item"><a class="nav__link" style="color:white;">Reportes</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
     </header>
-    <div class="container">
+   
+    <div class="container" style="margin:0 auto; margin-top: 7rem">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -46,12 +45,16 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - Turnos - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - Turnos - <a asp-area="" asp-controller="Home" asp-action="Privacy">Copyright</a>
         </div>
     </footer>
+    <!-- ===== IONICONS ===== -->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
+
 </html>
