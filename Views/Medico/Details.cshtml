@@ -46,8 +46,14 @@
         <dd>
             @Html.DisplayFor(modelo => modelo.HorarioAtencionHasta)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicoEspecialidad[0].Especialidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(modelo => modelo.MedicoEspecialidad[0].Especialidad.Descripcion)
+        </dd>
     </dl>
-</div>
+</div.Descripcion>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.IdMedico">Editar</a>
     <a asp-action="Index">Volver</a>

@@ -28,14 +28,16 @@ namespace turnos.Controllers
                 return NotFound();
             }
 
-            var Medico = await _context.Medico.FirstOrDefaultAsync(m => m.IdMedico == id);
+            var medico = await _context.Medico
+            .Where(m => m.IdMedico == id).Include(me => me.MedicoEspecialidad)
+            .ThenInclude(e => e.Especialidad).FirstOrDefaultAsync();
 
-            if (Medico == null)
+            if (medico == null)
             {
                 return NotFound();
             }
 
-            return View(Medico);
+            return View(medico);
         }
 
         public IActionResult Create()
