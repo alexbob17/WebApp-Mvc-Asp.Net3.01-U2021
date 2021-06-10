@@ -3,19 +3,25 @@
 <h3>¿Estas seguro de eliminar el siguiente registro?</h3>
 
 <div>
-    <dl>
-       <dt>
-           @Html.DisplayNameFor(modelo => modelo.Descripcion)
-       </dt>
-       <dd>
-           @Html.DisplayFor(modelo => modelo.Descripcion)
-       </dd>
-    </dl>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(modelo => modelo.Descripcion)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <td>
+                @Html.DisplayFor(modelo => modelo.Descripcion)
+            </td>
+        </tbody>
+    </table>
     <form asp-action="Delete">
         <input type="hidden" asp-for="IdEspecialidad">
-        <input type="submit" value="Eliminar">
+        <button type="submit" class="btn btn-danger ">Eliminar<i class="fas fa-trash-alt ml-2"></i></button>
     </form>
-    <div>
-        <a asp-action="Index">Volver</a>
+    <div class="mt-2">
+        <a class="btn btn-secondary" asp-action="Index"><i class="fas fa-arrow-left mr-2"></i>Volver</a>
     </div>
 </div>

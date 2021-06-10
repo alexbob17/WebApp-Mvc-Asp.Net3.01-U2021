@@ -1,21 +1,21 @@
 @model turnos.Models.Especialidad
 
 
-<h4>Especialidad</h4>
+<h3>Agregar Especialidad</h3>
 <div>
     <form asp-action="Create">
         <div asp-validation-summary="ModelOnly"> </div>
-            <div>
-                <label asp-for="Descripcion"></label>
-                <input asp-for="Descripcion">
-                <span asp-validation-for="Descripcion"></span>
-            </div>
+        <div class="form-group">
+            <label asp-for="Descripcion"></label>
+            <input class="form-control" asp-for="Descripcion">
+            <span asp-validation-for="Descripcion"></span>
+        </div>
         <div>
-            <input type="submit" value="Guardar">
+            <button type="submit" class="btn btn-primary ">Guardar<i class="fas fa-save ml-2"></i></button>
         </div>
     </form>
 </div>
 
-<div>
-    <a asp-action="Index">Volver</a>
+<div class="mt-2">
+    <a class="btn btn-secondary" asp-action="Index"><i class="fas fa-arrow-left mr-2"></i>Volver</a>
 </div>
