@@ -11,3 +11,14 @@ Este proyecto de curso consta del desarrollo de una Aplicación web de turnos de
 - Manipular información de nuestras tablas en SQL Server mediante LinQ.
 - Utilizar la herramienta Migrations Tool, para desarrollar en modo Code First.
 - Implementar un Login en nuestro sistema con HttpContext y SHA2_256.
+
+
+Se añaden todos los componentes necesarios u paquetes a utilizar que son:
+- Nuget packager manager
+- 
+
+Se realizar los ajustes necesarios para que todo aranque con normalidad. Estos son:
+- Editar el _layout.cshtml
+
+
+Se crean los modelos modelo, vista y controlador dependiendo del tipo de sistema a crear.

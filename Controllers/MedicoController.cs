@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using turnos.Models;
-
+using Microsoft.AspNetCore.Mvc.Rendering;
 namespace turnos.Controllers
 {
     public class MedicoController : Controller
@@ -38,6 +38,7 @@ namespace turnos.Controllers
 
         public IActionResult Create()
         {
+            ViewData["ListaEspecialidades"] = new SelectList(_context.Especialidad, "IdEspecialidad", "Descripcion");
             return View();
         }
 
@@ -45,12 +46,19 @@ namespace turnos.Controllers
         [HttpPost]
         //Valida que el formulario no se acceda atraves de una url , Sino desde el formulario
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico)
+        public async Task<IActionResult> Create([Bind("IdMedico,Nombre,Apellido,Direccion,Telefono,Email,HorarioAtencionDesde,HorarioAtencionHasta")] Medico medico, int IdEspecialidad)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(medico);
                 await _context.SaveChangesAsync();
+
+                var medicoEspecialidad = new MedicoEspecialidad();
+                medicoEspecialidad.IdMedico = medico.IdMedico;
+                medicoEspecialidad.IdEspecialidad = IdEspecialidad;
+                _context.Add(medicoEspecialidad);
+                await _context.SaveChangesAsync();
+                
                 return RedirectToAction(nameof(Index));
             }
             return View(medico);

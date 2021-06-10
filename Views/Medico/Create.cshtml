@@ -42,6 +42,10 @@
             <span asp-validation-for="HorarioAtencionHasta"></span>
         </div>
         <div>
+            <label></label>
+            <select name="IdEspecialidad" asp-items="ViewBag.ListaEspecialidades"></select>
+        </div>
+        <div>
             <input type="submit" value="Guardar">
         </div>
     </form>
