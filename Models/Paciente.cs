@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace turnos.Models
@@ -22,6 +23,8 @@ namespace turnos.Models
         [Required (ErrorMessage ="Debe ingresar una email")]
         [EmailAddress(ErrorMessage = "No es una direccion de email valida")]
         public string Email {get; set;}
+
+        public List<Turno> Turno {get; set;}
 
     }
 }
