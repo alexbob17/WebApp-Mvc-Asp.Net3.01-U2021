@@ -1,42 +1,46 @@
 @model turnos.Models.Paciente
 
 <h4>Paciente</h4>
+<table class="table table-striped table-bordered">
+    <thead class="bg-warning">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(modelo => modelo.Email)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <td>
+            @Html.DisplayFor(modelo => modelo.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelo => modelo.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelo => modelo.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelo => modelo.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelo => modelo.Email)
+        </td>
+    </tbody>
+</table>
 
 <div>
-    <dl>
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd>
-            @Html.DisplayFor(modelo => modelo.Nombre)
-        </dd>
-         <dt>
-            @Html.DisplayNameFor(model => model.Apellido)
-        </dt>
-        <dd>
-            @Html.DisplayFor(modelo => modelo.Apellido)
-        </dd>
-         <dt>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
-        <dd>
-            @Html.DisplayFor(modelo => modelo.Direccion)
-        </dd>
-         <dt>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
-        <dd>
-            @Html.DisplayFor(modelo => modelo.Telefono)
-        </dd>
-         <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd>
-            @Html.DisplayFor(modelo => modelo.Email)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.IdPaciente">Editar</a>
-    <a asp-action="Index">Volver</a>
+    <a asp-action="Edit" asp-route-id="@Model.IdPaciente" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver</a>
 </div>

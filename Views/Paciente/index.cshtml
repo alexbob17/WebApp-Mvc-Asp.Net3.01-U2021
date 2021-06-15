@@ -22,6 +22,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
+             <th>
+                Acciones
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -45,9 +48,11 @@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.IdPaciente">Editar</a>
-                    <a asp-action="Details" asp-route-id="@item.IdPaciente">Detalle</a>
-                    <a asp-action="Delete" asp-route-id="@item.IdPaciente">Eliminar</a>
+                    <a asp-action="Edit" asp-route-id="@item.IdPaciente" class="btn btn-primary mt-2"><i
+                        class="fas fa-edit"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.IdPaciente" class="btn btn-warning mt-2"><i class="fas fa-eye"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.IdPaciente" class="btn btn-danger mt-2"><i
+                        class="fas fa-trash-alt"></i></a>
                 </td>
             </tr>
         }

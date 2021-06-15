@@ -2,54 +2,60 @@
 
 <h3>¿Estas seguro de eliminar el siguiente registro?</h3>
 
-<div>
-    <dl>
-       <dt>
-           @Html.DisplayNameFor(modelo => modelo.Nombre)
-       </dt>
-       <dd>
-           @Html.DisplayFor(modelo => modelo.Nombre)
-       </dd>
-       <dt>
-           @Html.DisplayNameFor(modelo => modelo.Apellido)
-       </dt>
-       <dd>
-           @Html.DisplayFor(modelo => modelo.Apellido)
-       </dd>
-       <dt>
-           @Html.DisplayNameFor(modelo => modelo.Direccion)
-       </dt>
-       <dd>
-           @Html.DisplayFor(modelo => modelo.Direccion)
-       </dd>
-       <dt>
-           @Html.DisplayNameFor(modelo => modelo.Telefono)
-       </dt>
-       <dd>
-           @Html.DisplayFor(modelo => modelo.Telefono)
-       </dd>
-       <dt>
-           @Html.DisplayNameFor(modelo => modelo.Email)
-       </dt>
-       <dd>
-           @Html.DisplayFor(modelo => modelo.Email)
-       </dd>
-        <dd>
-           @Html.DisplayNameFor(modelo => modelo.HorarioAtencionDesde)
-       </dd>
-        <dd>
-           @Html.DisplayFor(modelo => modelo.HorarioAtencionDesde)
-       </dd>
-       <dd>
-           @Html.DisplayNameFor(modelo => modelo.HorarioAtencionHasta)
-       </dd>
-        <dd>
-           @Html.DisplayFor(modelo => modelo.HorarioAtencionHasta)
-       </dd>
-    </dl>
+  <table class="table table-striped table-bordered">
+      <thead class="bg-danger text-white">
+          <tr>
+              <th>
+                    @Html.DisplayNameFor(modelo => modelo.Nombre)
+              </th>
+              <th>
+                   @Html.DisplayNameFor(modelo => modelo.Apellido)
+              </th>
+              <th>
+                   @Html.DisplayNameFor(modelo => modelo.Direccion)
+              </th>
+              <th>
+                  @Html.DisplayNameFor(modelo => modelo.Telefono)
+              </th>
+              <th>
+                 @Html.DisplayNameFor(modelo => modelo.Email)
+              </th>
+              <th>
+                 @Html.DisplayNameFor(modelo => modelo.HorarioAtencionDesde)
+              </th>
+              <th>
+                   @Html.DisplayNameFor(modelo => modelo.HorarioAtencionHasta)
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+          <td>
+               @Html.DisplayFor(modelo => modelo.Nombre)
+          </td>
+          <td>
+              @Html.DisplayFor(modelo => modelo.Apellido)
+          </td>
+          <td>
+               @Html.DisplayFor(modelo => modelo.Direccion)
+          </td>
+          <td>
+              @Html.DisplayFor(modelo => modelo.Telefono)
+          </td>
+          <td>
+             @Html.DisplayFor(modelo => modelo.Email)
+          </td>
+          <td>
+            @Html.DisplayFor(modelo => modelo.HorarioAtencionDesde)
+          </td>
+          <td>
+            @Html.DisplayFor(modelo => modelo.HorarioAtencionHasta)
+          </td>
+      </tbody>
+  </table>
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="IdMedico">
-        <input type="submit" value="Eliminar">
-         <a asp-action="Index">Volver</a>
+          <button type="submit" class="btn btn-danger ">Eliminar</button>
+        <a class="btn btn-secondary" asp-action="Index"><i class="fas fa-arrow-left mr-2"></i>Volver</a>
     </form>
 </div>

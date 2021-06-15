@@ -5,52 +5,49 @@
 <div>
     <form asp-action="Edit">
         <div asp-validation-summary="ModelOnly"></div>
-            <input type="hidden" asp-for="IdMedico">
-            <div>
-                <label asp-for="Nombre"></label>
-                <input asp-for="Nombre">
-                <span asp-validation-for ="Nombre"></span>
-            </div>
-            <div>
-                <label asp-for="Apellido"></label>
-                <input asp-for="Apellido">
-                <span asp-validation-for ="Apellido"></span>
-            </div>
-            <div>
-                <label asp-for="Direccion"></label>
-                <input asp-for="Direccion">
-                <span asp-validation-for ="Direccion"></span>
-            </div>
-            <div>
-                <label asp-for="Telefono"></label>
-                <input asp-for="Telefono">
-                <span asp-validation-for ="Telefono"></span>
-            </div>
-            <div>
-                <label asp-for="Email"></label>
-                <input asp-for="Email">
-                <span asp-validation-for ="Email"></span>
-            </div>
-            <div>
-                <label asp-for="HorarioAtencionDesde"></label>
-                <input asp-for="HorarioAtencionDesde">
-                <span asp-validation-for ="HorarioAtencionDesde"></span>
-            </div>
-            <div>
-                <label asp-for="HorarioAtencionHasta"></label>
-                <input asp-for="HorarioAtencionHasta">
-                <span asp-validation-for ="HorarioAtencionHasta"></span>
-            </div>
-            <div>
-                <label></label>
-                <select name="IdEspecialidad" asp-items="ViewBag.ListaEspecialidades"></select>
-            </div>
-            <div>
-                <input type="submit" value="Guardar">
-            </div>
+        <input type="hidden" asp-for="IdMedico">
+        <div class="form-group">
+            <label asp-for="Nombre"></label>
+            <input asp-for="Nombre" class="form-control">
+            <span asp-validation-for="Nombre"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Apellido"></label>
+            <input asp-for="Apellido" class="form-control">
+            <span asp-validation-for="Apellido"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Direccion"></label>
+            <input asp-for="Direccion" class="form-control">
+            <span asp-validation-for="Direccion"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Telefono"></label>
+            <input asp-for="Telefono" class="form-control">
+            <span asp-validation-for="Telefono"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control">
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="HorarioAtencionDesde"></label>
+            <input asp-for="HorarioAtencionDesde" class="form-control">
+            <span asp-validation-for="HorarioAtencionDesde"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="HorarioAtencionHasta"></label>
+            <input asp-for="HorarioAtencionHasta" class="form-control">
+            <span asp-validation-for="HorarioAtencionHasta"></span>
+        </div>
+        <div >
+            <label>Especialidad</label>
+            <select name="IdEspecialidad" asp-items="ViewBag.ListaEspecialidades" class="form-control"></select>
+        </div>
+        <div class="mt-1">
+            <button type="submit" class="btn btn-primary ">Guardar<i class="fas fa-save ml-2"></i></button>
+            <a class="btn btn-secondary" asp-action="Index"><i class="fas fa-arrow-left mr-2"></i>Volver</a>
+        </div>
     </form>
-</div>
-
-<div>
-    <a asp-action="Index">Volver</a>
 </div>
