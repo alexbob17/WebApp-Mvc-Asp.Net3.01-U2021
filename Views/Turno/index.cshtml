@@ -7,11 +7,11 @@
 <div class="row">
     <div class="col-6">
         <label asp-for="IdMedico">Medico</label>
-        <select asp-for="IdMedico" asp-items="ViewBag.IdMedico"></select>
+        <select asp-for="IdMedico" asp-items="ViewBag.IdMedico" class="form-control"></select>
     </div> 
     <div class="col-6">
         <label asp-for="IdPaciente">Paciente</label>
-        <select asp-for="IdPaciente" asp-items="ViewBag.IdPaciente"></select>
+        <select asp-for="IdPaciente" asp-items="ViewBag.IdPaciente" class="form-control"></select>
     </div>
 </div>
 <br>
@@ -27,8 +27,38 @@
 
     <script>
         $(document).ready(function(){
+            var horarioDesde = "";
+            var horarioHasta = "";
+            
+            $.ajax({
+                type: "GET",
+                url: "Medico/TraerHorarioAtencionDesde",
+                data:{"idMedico": $('#IdMedico').val()},
+                async:false,
+                success: function(resultado){
+                    horarioDesde = resultado;
+                },
+                error: function(){
+                    alert("Error al traer el horario de atencion desde del medico.")
+                }
+            })
+            
             $('#CalendarioTurnos').fullCalendar({
-                
+                contentHeight:'auto',
+                defaultDate: new Date(),
+                slotLabelFormat: "HH:mm",
+                defaultView: 'agendaWeek',
+                header:{
+                    left:'prev, next today',
+                    right:'month, agendaWeek,agendaDay',
+                },
+                slotDuration :'00:30',
+                nowIndicator:true,
+                allDaySlot: false,
+                selectable : true,
+                eventLimit: true,
+                minTime: horarioDesde,
+                maxTime: horarioHasta,
             })
         })
     </script>
