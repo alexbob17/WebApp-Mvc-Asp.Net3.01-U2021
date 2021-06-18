@@ -8,7 +8,7 @@ Este proyecto de curso consta del desarrollo de una Aplicación web de turnos de
 - MaterializeCSS, vamos a incorporar elementos a nuestro sitio web.
 - Programar EndPoints en el backend con C#.
 - Seguridad con AntiForgery Token y su implementacion.
-- Manipular información de nuestras tablas en SQL Server mediante LinQ.
+- Manipulacion información de nuestras tablas en SQL Server mediante LinQ.
 - Utilizar la herramienta Migrations Tool, para desarrollar en modo Code First.
 - Implementar un Login en nuestro sistema con HttpContext y SHA2_256.
 

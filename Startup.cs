@@ -25,6 +25,12 @@ namespace turnos
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession(options => 
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(300);
+                options.Cookie.HttpOnly = true;
+            });
+
             services.AddControllersWithViews();
             //Enviamos los paramatros que se conectaran con sqlServer que es el paramatro Opciones
             services.AddDbContext<TurnosContext>(opciones => opciones.UseSqlServer(Configuration.GetConnectionString("TurnosContext")));
@@ -37,7 +43,7 @@ namespace turnos
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
+            if(env.IsProduction())
             {
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
@@ -49,6 +55,8 @@ namespace turnos
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

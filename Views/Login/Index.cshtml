@@ -1,50 +1,37 @@
 @model turnos.Models.Login
-@* 
-<div class="container">
-	<h4>Login</h4>
-	<hr>
-	<br>
-	<form class="col-12" asp-action="Login">
-		<div asp-validation-summary="ModelOnly"></div>
-		<div class="row">
-			<div class="form-group  col-sm-6">
-				<i></i>
-				<input type="text" asp-for="Usuario">
-				<label asp-for="Usuario"></label>
+
+@{
+	Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="~/css/site.css" />
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="~/css/styles.css">
+
+<body style="background: #222831;">
+	<div class="container">
+	<div class="login-form">
+		<form asp-action="Login">
+			<div asp-validation-summary="ModelOnly"></div>
+			<h2 class="text-center">Iniciar Sesión</h2>
+			<div class="form-group">
+				<i class="far fa-user iconoInput"></i>
+				<input type="text" class="form-control inputPadding" asp-for="Usuario" Placeholder="Usuario">
 				<span asp-validation-for="Usuario"></span>
 			</div>
-		</div>
-		<div class="row">
-			<div class="form-group col-sm-6">
-				<i></i>
-				<input type="password" asp-for="Password">
-				<label asp-for="Password"></label>
+			<div class="form-group" >
+				<i class="fas fa-lock iconoInput"></i>
+				<input type="password" class="form-control inputPadding" asp-for="Password" Placeholder="Contraseña">
 				<span asp-validation-for="Password"></span>
 			</div>
-		</div>
-		<div>
-			<button class="btn btn-primary" type="submit" name="action"></button>
-		</div>
-
-	</form>
-</div>  *@
-
- <div class="container">
-	<div class="login-form">
-    <form asp-action="Login">
-		<div asp-validation-summary="ModelOnly"></div>
-        <h2 class="text-center">Iniciar Sesion</h2>       
-        <div class="form-group">
-            <input type="text" class="form-control" asp-for="Usuario" Placeholder="Usuario">
-			<span asp-validation-for="Usuario"></span>
-        </div>
-        <div class="form-group">
-            <input type="password" class="form-control" asp-for="Password" Placeholder="Contraseña">
-			<span asp-validation-for="Password"></span>
-        </div>
-        <div class="form-group" style="text-align: center;">
-            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
-        </div>       
-    </form>
-	</div>	
-</div> 
+			<span class="box-error">@ViewBag.errorLogin</span>
+			<br>
+			<div class="form-group" style="text-align: center;">
+				<button type="submit" class="btn btn-primary" >Ingresar<i class="fas fa-sign-in-alt" style="padding-left: 10px;"></i></button>
+			</div>
+		</form>
+	</div>
+</div>
+</body>

@@ -1,5 +1,4 @@
 C:\turnos\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\turnos\bin\Debug\netcoreapp3.1\appsettings.json
 C:\turnos\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\turnos\bin\Debug\netcoreapp3.1\turnos.exe
 C:\turnos\bin\Debug\netcoreapp3.1\turnos.deps.json
@@ -80,3 +79,4 @@ C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Medico\Edit.cshtml.g.cs
 C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Medico\index.cshtml.g.cs
 C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Turno\index.cshtml.g.cs
 C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
+C:\turnos\bin\Debug\netcoreapp3.1\appsettings.Production.json

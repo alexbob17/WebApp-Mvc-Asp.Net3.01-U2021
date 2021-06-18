@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using turnos.Models;
 
@@ -30,6 +31,7 @@ namespace turnos.Controllers
 
                 if(loginUsuario != null)
                 {
+                    HttpContext.Session.SetString("usuario",loginUsuario.Usuario);
                     return RedirectToAction("Index", "Home");
                 }else{
                     ViewData["errorLogin"]="Los datos ingresados son incorrectos";
@@ -56,6 +58,12 @@ namespace turnos.Controllers
                 return stringBuilder.ToString();
                 
             }
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return View("Index");
         }
     }
 }
