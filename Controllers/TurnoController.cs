@@ -30,8 +30,16 @@ namespace turnos.Controllers
 
         public JsonResult ObtenerTurnos(int idMedico)
         {
-            List<Turno> turnos = new List<Turno>();
-            turnos = _context.Turno.Where(t => t.IdMedico == idMedico).ToList();
+            var turnos = _context.Turno.Where(t => t.IdMedico == idMedico)
+            .Select(t => new {
+                t.IdTurno,
+                t.IdMedico,
+                t.IdPaciente,
+                t.FechaHoraInicio,
+                t.FechaHoraFin,
+                paciente = t.Paciente.Nombre + ", " + t.Paciente.Apellido
+            })
+            .ToList();
 
             return Json(turnos);
         }

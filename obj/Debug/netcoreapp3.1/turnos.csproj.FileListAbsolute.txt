@@ -79,3 +79,4 @@ C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Medico\Details.cshtml.g.cs
 C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Medico\Edit.cshtml.g.cs
 C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Medico\index.cshtml.g.cs
 C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Turno\index.cshtml.g.cs
+C:\turnos\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
