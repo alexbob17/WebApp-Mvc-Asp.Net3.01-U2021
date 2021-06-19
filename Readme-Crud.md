@@ -5,7 +5,7 @@ Este proyecto de curso consta del desarrollo de una Aplicación web de turnos de
 ## Que necesitamos?
 - MVC el patrón Modelo/Vista/Controlador en tus proyectos.
 - Data Annotations para definir validaciones de formulario y anotaciones en propiedades.
-- MaterializeCSS, vamos a incorporar elementos a nuestro sitio web.
+- se va a incorpar bootstrap  incorporar elementos a nuestro sitio web.
 - Programar EndPoints en el backend con C#.
 - Seguridad con AntiForgery Token y su implementacion.
 - Manipulacion información de nuestras tablas en SQL Server mediante LinQ.
